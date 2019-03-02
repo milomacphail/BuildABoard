@@ -3,14 +3,11 @@
 #include<stdlib.h>
 #include<cs50.h>
 
-void drawColumn(int);
-void drawCell();
-void drawRow(int);
+void drawBoard(int, int);
 
 int main(void)
 {
-    drawColumn(8);
-    drawRow(3);
+    drawBoard(4, 8);
 }
 
 void drawTop()
@@ -28,29 +25,24 @@ void drawBottom()
     printf("+--+");
 }
 
-void drawColumn(int column)
+void drawBoard(int row, int column)
 {
-    for(int columnCounter = 0; columnCounter < column; columnCounter++)
+    for(int rowCounter = 0; rowCounter < row; rowCounter ++)
     {
-        drawTop();
-    }
+        for(int columnCounter = 0; columnCounter < column; columnCounter++)
+        {
+            drawTop();
+        }
+        printf("\n");
+        for(int wallCounter= 0; wallCounter <column; wallCounter++)
+        {
+            drawWalls();
+        }
+        printf("\n");
+        for(int bottomCounter= 0; bottomCounter <column; bottomCounter++)
+        {
+            drawBottom();
+        }
     printf("\n");
-    for(int wallCounter= 0; wallCounter <column; wallCounter++)
-    {
-        drawWalls();
-    }
-    printf("\n");
-    for(int bottomCounter= 0; bottomCounter <column; bottomCounter++)
-    {
-        drawBottom();
-    }
-    printf("\n");
-}
-
-void drawRow(int row)
-{
-    for(int rowCounter = 0; rowCounter<row; rowCounter++)
-    {
-        drawColumn();
     }
 }

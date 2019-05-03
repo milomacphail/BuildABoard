@@ -39,7 +39,7 @@ void drawBoard(int row, int column)
             drawWalls();
         }
         printf("\n");
-        for(int bottomCounter= 0; bottomCounter <column; bottomCounter++)a;
+        for(int bottomCounter= 0; bottomCounter <column; bottomCounter++)
         {
             drawBottom();
         }
